@@ -19,7 +19,7 @@
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/BrowserifyNavigate/Browserify Navigate.sublime-settings"
+                                    "file": "${packages}/BrowserifyNavigation/Browserify Navigation.sublime-settings"
                                 },
                                 "caption": "Settings – Default"
                             },
@@ -27,7 +27,7 @@
                             {
                                 "command": "open_file", "args":
                                 {
-                                    "file": "${packages}/User/Browserify Navigate.sublime-settings"
+                                    "file": "${packages}/User/Browserify Navigation.sublime-settings"
                                 },
                                 "caption": "Settings – User"
                             },
@@ -36,7 +36,7 @@
                             {
                                 "command": "open_file",
                                 "args": {
-                                    "file": "${packages}/BrowserifyNavigate/Default.sublime-keymap"
+                                    "file": "${packages}/BrowserifyNavigation/Default.sublime-keymap"
                                 },
                                 "caption": "Key Bindings – Default"
                             },
