@@ -1,0 +1,74 @@
+[
+    {
+        "caption": "Preferences",
+        "mnemonic": "n",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Browserify Navigate",
+                        "children":
+                        [
+                            // FuzzyFileNav default settings
+                            {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/BrowserifyNavigate/Browserify Navigate.sublime-settings"
+                                },
+                                "caption": "Settings – Default"
+                            },
+                            // FuzzyFileNav user settings
+                            {
+                                "command": "open_file", "args":
+                                {
+                                    "file": "${packages}/User/Browserify Navigate.sublime-settings"
+                                },
+                                "caption": "Settings – User"
+                            },
+                            { "caption": "-" },
+                            // FuzzyFileNav Default Key mappings
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/BrowserifyNavigate/Default.sublime-keymap"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            // FuzzyFileNav User Key mappings
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – User"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/User/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – User"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
