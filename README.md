@@ -2,7 +2,7 @@
 
 ## Description
 
-This plug-in is used for navigating modules within browserified projects, specifically (exclusively?) those processed by [grunt-browserify-navigation](https://github.com/trabian/grunt-browserify-navigation).
+This plug-in is used for navigating modules within browserified projects, specifically (exclusively?) those processed by [grunt-browserify-navigation](https://github.com/trabian/grunt-browserify-navigation). See [this screencast](http://www.screencast.com/t/0FKXptqa9) for a demo (within the screencast the Sublime Text command is being triggered via a keyboard shortcut).
 
 # Installation
 
