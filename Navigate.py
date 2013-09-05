@@ -1,37 +1,46 @@
-import sublime, sublime_plugin, sys, os, re
+import sublime
+import sublime_plugin
+import sys
+import os
+import re
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 
 import redis
 
-# require './application'
-# require 'test'
 
 class NavigateBrowserifyCommand(sublime_plugin.TextCommand):
 
-  def run(self, edit):
+    def run(self, edit):
 
-    r = redis.Redis()
+        s = sublime.load_settings('Browserify Navigate.sublime-settings')
 
-    current_file = self.view.file_name()
+        r = redis.Redis(
+            host=s.get('redis_host'),
+            port=s.get('redis_port'),
+            db=s.get('redis_db'))
 
-    for region in self.view.sel():
+        namespace = s.get('namespace')
 
-        line = self.view.line(region)
-        line_contents = self.view.substr(line)
+        current_file = self.view.file_name()
 
-        m = re.search("require([\s\(])[\'\"](.*)[\'\"]", line_contents)
+        for region in self.view.sel():
 
-        if m != None:
-            name = m.group(2)
+            line = self.view.line(region)
+            line_contents = self.view.substr(line)
 
-            key = ":".join(["browserify", current_file])
+            m = re.search("require([\s\(])[\'\"](.*)[\'\"]", line_contents)
 
-            result = r.hget(key, name)
+            if m != None:
 
-            if result != None:
-              result = result.decode('utf-8')
-              print(result)
-              self.view.window().open_file(result)
-            else:
-              print("No module found for path " + name)
+                name = m.group(2)
+
+                key = ":".join([namespace, current_file])
+
+                result = r.hget(key, name)
+
+                if result != None:
+                    result = result.decode('utf-8')
+                    self.view.window().open_file(result)
+                else:
+                    print("No module found for path " + name)
