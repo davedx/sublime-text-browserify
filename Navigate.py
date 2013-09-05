@@ -13,7 +13,7 @@ class NavigateBrowserifyCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
 
-        s = sublime.load_settings('Browserify Navigate.sublime-settings')
+        s = sublime.load_settings('Browserify Navigation.sublime-settings')
 
         r = redis.Redis(
             host=s.get('redis_host'),

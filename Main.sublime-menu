@@ -12,7 +12,7 @@
                 "children":
                 [
                     {
-                        "caption": "Browserify Navigate",
+                        "caption": "Browserify Navigation",
                         "children":
                         [
                             // FuzzyFileNav default settings
