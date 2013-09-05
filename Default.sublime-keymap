@@ -1,5 +1,6 @@
 [
   { "keys": ["g", "r"], "command": "navigate_browserify",
     "context": [{"key": "setting.command_mode"}]
-  }
+  },
+  { "keys": ["ctrl+r"], "command": "navigate_browserify"}
 ]
