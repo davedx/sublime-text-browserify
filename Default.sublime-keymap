@@ -2,5 +2,6 @@
   { "keys": ["g", "r"], "command": "navigate_browserify",
     "context": [{"key": "setting.command_mode"}]
   },
-  { "keys": ["ctrl+r"], "command": "navigate_browserify"}
+  { "keys": ["ctrl+r"], "command": "navigate_browserify"},
+  { "keys": ["ctrl+u"], "command": "find_unused_browserify"}
 ]

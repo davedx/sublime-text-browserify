@@ -6,6 +6,20 @@ import re
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "lib"))
 
+class FindUnusedBrowserifyCommand(sublime_plugin.TextCommand):
+
+    def run(self, edit):
+        content = self.view.substr(sublime.Region(0, self.view.size()))
+
+        requires = re.findall("var\s(.*) = require\([\'\"](.*)[\'\"]", content)
+        for require in requires:
+            others = re.findall(require[0], content)
+            if len(others) == 1:
+                reg = self.view.find("var\s" + require[0] + " = require\([\'\"]" + require[1] + "[\'\"]\);", 0)
+                reg_line = self.view.full_line(reg)
+                if reg_line != None:
+                    self.view.erase(edit, reg_line)
+
 class NavigateBrowserifyCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
@@ -20,8 +34,7 @@ class NavigateBrowserifyCommand(sublime_plugin.TextCommand):
         #buffer = open('file.txt','r').read()
         #modules = re.findall(r'""', buffer)
 
-        current_file = self.view.file_name()
-
+        #TODO: update for alt + mouse click
         for region in self.view.sel():
 
             line = self.view.line(region)
@@ -32,9 +45,5 @@ class NavigateBrowserifyCommand(sublime_plugin.TextCommand):
             if m != None:
 
                 name = m.group(2)
-
-                key = ":".join([namespace, current_file])
-
-                self.view.insert(edit, 0, current_file + " -> " + name)
                 self.view.window().open_file(name + ".js")
 
