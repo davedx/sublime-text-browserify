@@ -4,6 +4,14 @@
 
 This plug-in is used for navigating modules within browserified projects. It's adapted from the package by https://github.com/trabianmatt but doesn't need redis.
 
+# Shortcuts
+
+The following commands are available:
+
+    ctrl+r - Navigate to the module referenced within a `require` statement on the current line
+    alt+leftclick - Same as above. Note: you need to click once to select the thing first...
+    ctrl+u - Remove all unused requires. Note: The regular expression is quite rigid; requires must conform to current coding standards.
+
 # Installation
 
 ## via Source Control
@@ -30,12 +38,5 @@ If using Source Control:
     cd "PACKAGE_PATH/BrowserifyNavigation"
     git fetch origin
     git merge origin/master
-
-# Shortcuts
-
-You can access the commands either using the shortcuts.
-
-    ctrl+r - Navigate to the module referenced within a `require` statement on the current line
-    alt-leftclick - Same as above. Note you need to click once to select the thing first..buggy.
 
 Go to `Preferences > Package Settings > Browserify Navigation > Key Bindings - User` to change these shortcuts.
