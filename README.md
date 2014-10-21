@@ -2,7 +2,7 @@
 
 ## Description
 
-This plug-in is used for navigating modules within browserified projects, specifically (exclusively?) those processed by [grunt-browserify-navigation](https://github.com/trabian/grunt-browserify-navigation). See [this screencast](http://www.screencast.com/t/0FKXptqa9) for a demo (within the screencast the Sublime Text command is being triggered via a keyboard shortcut).
+This plug-in is used for navigating modules within browserified projects. It's adapted from the package by https://github.com/trabianmatt but doesn't need redis.
 
 # Installation
 
@@ -19,7 +19,7 @@ Sublime stores packages in the following locations (replace '3' with '2' to use 
 Open a Terminal/Console and run the following commands, replacing `PACKAGE_PATH` with the path corresponding to your OS above.
 
     cd PACKAGE_PATH
-    git clone https://github.com/trabian/BrowserifyNavigation.git
+    git clone https://github.com/davedx/sublime-text-browserify.git
 
 # Updating
 
@@ -36,27 +36,6 @@ If using Source Control:
 You can access the commands either using the shortcuts.
 
     ctrl+r - Navigate to the module referenced within a `require` statement on the current line
-    g+r - Same as above but when in `command` mode within Vintage Mode
+    alt-leftclick - Same as above. Note you need to click once to select the thing first..buggy.
 
 Go to `Preferences > Package Settings > Browserify Navigation > Key Bindings - User` to change these shortcuts.
-
-# Settings
-
-Go to `Preferences > Package Settings > Browserify Navigation > Settings - User` to change settings.
-
-```Javascript
-{
-
-  /*
-    The namespace for the redis keys where the browserify references are stored. See https://github.com/trabian/grunt-browserify-navigation#options for details.
-  */
-  "namespace" : "browserify",
-
-  /*
-    Redis configuration options. The defaults below are the standard defaults for a Redis server running on the same development computer.
-  */
-  "redis_port": 6379,
-  "redis_host": "localhost",
-  "redis_db": 0
-}
-```
