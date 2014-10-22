@@ -29,6 +29,10 @@ Open a Terminal/Console and run the following commands, replacing `PACKAGE_PATH`
     cd PACKAGE_PATH
     git clone https://github.com/davedx/sublime-text-browserify.git
 
+# Contributing
+
+I would love somebody to take a look at #1 - implement automatic require of undefined symbols in the current file. I think this part needs to actually parse the JS somehow to find those symbols, then find the correct require path from the build file, so it's a significant time investment. It would be a killer feature for the plugin, though!
+
 # Updating
 
 If you are using Package Control, updating will be automatic and you don't have to worry about it.
